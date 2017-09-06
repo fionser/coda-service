@@ -1,11 +1,10 @@
 lanugage: go
 go:
-    - 1.8.x
+    - 1.8.3
     - master
-go_import_path: /home/travis/gopath/src/
 install:
     - go get github.com/astaxie/beego
     - go get github.com/smartystreets/goconvey/convey
 script: 
-    - ls
+    - pwd
     - go test ./tests
