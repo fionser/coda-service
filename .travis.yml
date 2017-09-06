@@ -6,4 +6,6 @@ go_import_path: ./
 install:
     - go get github.com/astaxie/beego
     - go get github.com/smartystreets/goconvey/convey
-# script: go test ./tests
+script: 
+    - ls
+    - go test ./tests
