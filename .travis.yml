@@ -1,0 +1,8 @@
+lanugage: go
+go:
+    - 1.8.x
+    - master
+install:
+    - go get github.com/astaxie/beego
+    - go get github.com/smartystreets/goconvey/convey
+script: go test ./tests
