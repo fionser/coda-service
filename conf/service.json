@@ -1,0 +1,16 @@
+{
+        "Protocols": [
+                {
+                        "Name" : "PROT_MEAN",
+                        "Description" : "Average"
+                },
+                {
+                        "Name" : "PROT_CON",
+                        "Description" : "Contingency Table"
+                },
+                {
+                        "Name" : "PROT_LR",
+                        "Description" : "Linear Regression"
+                }
+        ]
+}
