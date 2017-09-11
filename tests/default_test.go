@@ -33,3 +33,7 @@ func TestGet(t *testing.T) {
 		})
 	})
 }
+
+func TestKeyGen(t *testing.T) {
+
+}

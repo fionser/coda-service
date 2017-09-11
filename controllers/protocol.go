@@ -11,6 +11,10 @@ type ProtocolController struct {
 	beego.Controller
 }
 
+func (u *ProtocolController) Get() {
+	u.GetAll()
+}
+
 // @Title GetAll
 // @Description get all Protocols
 // @Success 200 {object} models.Protocol

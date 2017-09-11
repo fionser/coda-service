@@ -14,12 +14,12 @@ import (
 )
 
 func init() {
+	beego.Router("/", &controllers.MainController{})
 	ns := beego.NewNamespace("/v1",
-		beego.NSNamespace("/protocol",
-			beego.NSInclude(
-				&controllers.ProtocolController{},
-			),
-		),
+		beego.NSRouter("/protocol", &controllers.ProtocolController{}),
+		beego.NSRouter("/encrypt/:src:string&:dst:string", &controllers.EncryptionController{}),
+		beego.NSRouter("/session/", &controllers.SessionController{}),
+		beego.NSRouter("/keygen/:protocol", &controllers.KeyGenController{}),
 	)
 	beego.AddNamespace(ns)
 }

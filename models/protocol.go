@@ -3,6 +3,8 @@ package models
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/config"
+	"os"
+	"path/filepath"
 )
 
 var (
@@ -16,11 +18,22 @@ type Protocol struct {
 	Description string
 }
 
-const (
-	PROTOCOL_FILE = "/home/riku/go/src/coda-service/conf/service.json"
+var (
+	PROTOCOL_FILE = ""
 )
 
+func possible_protocol_file() string {
+	workdir, err := os.Getwd()
+	if err != nil {
+		beego.BeeLogger.Warn("Can not get the working directory")
+		return ""
+	}
+
+	return filepath.Join(workdir, "conf/service.json")
+}
+
 func init() {
+	PROTOCOL_FILE = possible_protocol_file()
 	var jsonConfig config.JSONConfig
 	configer, err := jsonConfig.Parse(PROTOCOL_FILE)
 	if err == nil {
